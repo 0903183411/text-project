@@ -7,18 +7,30 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+     <link href=" static/style.css " rel="stylesheet" >
 
     <title>Jasmine's webside</title>
+ 
   </head>
-  <body>
-      <div style="width: 100%;" class="container";>
-        <div style="height: 100px;background-color: #CCDDFF;">
-       <h1>股海資訊網</h1>
-      </div>
-        
+  <nav>
+    <div style="width: 100%; background-color: #CCDDFF;padding: 10px;";>
+      <h1 style="text-align:center;">股海資訊網</h1>
+      <ul class="inline-block-nav"> 
+        <li><a href="#">上市大盤</a></li> /*暫定分類*/
+        <li><a href="#">上櫃大盤</a></li>
+        <li><a href="#">類股一覽</a></li>
+        <li><a href="#">公告訊息</a></li>
+        <li><a href="#">股市篩選</a></li>
+        <li><a href="#">財報比較</a></li>
+      </ul>
+    </div>
+  </nav>
+  <body> 
+
+      <div  class="container";>  
         以下是網站儲存的收盤價資訊：<br>
         {% for stk in mystock %}
-        <li>{{ stk.name }}, {{ stk.price }}, {{ stk.date }}</li>
+        <li>{{ stk.name }}, {{ stk.price }}, {{ stk.date }}, {{stk.high}}</li>
         {% endfor %}
         <hr>
         現在時刻：{{ now }}

@@ -5,6 +5,8 @@ class Stock(models.Model):
     sid = models.CharField(max_length=10)   #股票代號
     price = models.FloatField(default=0.0)  #收盤價
     date = models.DateField()               #日期
+    high = models.FloatField(default=0.0)   #最高價
+    
     
 
     class Meta:

@@ -8,12 +8,14 @@ from mysite.models import Stock
 def index(request):
     
     now = datetime.datetime.now()
-    # stock = twstock.Stock('2330')
-    # prices = stock.price
+    #stock = twstock.Stock('2330')
+    #prices = stock.price
     # dates = stock.date
-    mystock = Stock.objects.all()
+    #highs = stock.high 
+    mystock = stock.objects.all()
     return render(request, "index.html", locals())
- 
+    
+
 def showdate(request):
 
     now = datetime.datetime.now()
