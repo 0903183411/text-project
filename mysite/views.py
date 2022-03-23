@@ -12,9 +12,11 @@ def index(request):
     #prices = stock.price
     # dates = stock.date
     #highs = stock.high 
-    mystock = stock.objects.all()
     return render(request, "index.html", locals())
     
+def prices(request):
+    mystock = Stock.objects.all()
+    return render(request, "prices.html", locals())
 
 def showdate(request):
 
