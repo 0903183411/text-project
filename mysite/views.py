@@ -18,6 +18,10 @@ def prices(request):
     mystock = Stock.objects.all()
     return render(request, "prices.html", locals())
 
+def post(request):
+    mystock = Stock.objects.all()
+    return render(request, "post.html", locals())
+
 def showdate(request):
 
     now = datetime.datetime.now()

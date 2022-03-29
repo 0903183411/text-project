@@ -5,6 +5,7 @@ from mysite import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('prices/', views.prices),
+    path('post/<slug:slug>/', views.post),
     path('', views.index),
     path('date/', views.showdate),
 ]
