@@ -5,14 +5,22 @@ from django.http import HttpResponse
 import datetime, twstock
 from mysite.models import Stock
 
+
+
 def index(request):
     
     now = datetime.datetime.now()
+    
     #stock = twstock.Stock('2330')
     #prices = stock.price
     # dates = stock.date
     #highs = stock.high 
     return render(request, "index.html", locals())
+
+def base(request):
+    posts = Post.objects.all()
+    return render(request, 'base.html', locals())
+
     
 def prices(request):
     mystock = Stock.objects.all()

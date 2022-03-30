@@ -16,6 +16,11 @@
   <body style ="text-align:center;background-color: #cae5f8;;padding: 10px;"> 
     {% include "nav.html" %}
       <div  class="container";>  
+        {% for post in posts %}
+        <p style='font-family:微軟正黑體;font-size:14pt;font-weight:bold;'>
+            <a href='/post/'>{{stk.name}}</a>
+        </p>
+        {% endfor %}
         {% block main-content %} {% endblock %}
     </div>
     

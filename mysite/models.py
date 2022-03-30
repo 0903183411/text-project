@@ -1,4 +1,9 @@
 from django.db import models
+from django.shortcuts import render
+from django.http import HttpResponse
+
+
+
 
 class Stock(models.Model):
     name = models.CharField(max_length=10)  #股票名稱
@@ -14,3 +19,6 @@ class Stock(models.Model):
 
     def __str__(self):
         return self.name
+
+
+    
