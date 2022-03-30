@@ -1,13 +1,25 @@
 {% extends 'base.html' %}
 
 {% block title %} {{ stk.name }} - 個別股票 {% endblock %}
-{% block headmessage %}
+{% block head %}
     <h3 style='font-family:微軟正黑體;'>{{ stk.name }}</h3>
     <a style='font-family:微軟正黑體;' href='/'>回首頁</a>
 {% endblock %}
-{% block content %} 
+{% block main-content %} 
         <p style='font-family:微軟正黑體;font-size:12pt;letter-spacing:2pt;'>
-            {{ stk.name }}, {{ stk.price }}, {{ stk.date }}, {{stk.high}}</a>
+            <table class="table table-striped">
+                <tr><td>股票名稱</td><td>收盤價</td><td>日期</td><td>類別</td></tr>
+            {% for stk in mystock %}
+            <tr>
+            <td>{{ stk.name }}</td>
+            <td> {{ stk.price }}</td>
+            <td> {{ stk.date }}</td>
+            <td>
+                <a href="/post/{{stk.cat}}/">{{stk.cat}}</a>
+            </td>
+            </tr>
+            {% endfor %}
+            </table>
         </p>
 {% endblock %}
 

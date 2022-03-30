@@ -26,8 +26,11 @@ def prices(request):
     mystock = Stock.objects.all()
     return render(request, "prices.html", locals())
 
-def post(request):
-    mystock = Stock.objects.all()
+def post(request, cat=""):
+    if cat=="":
+        mystock = Stock.objects.all()
+    else:
+        mystock = Stock.objects.filter(cat=cat)
     return render(request, "post.html", locals())
 
 def showdate(request):

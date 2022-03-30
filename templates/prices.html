@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
     {% block title %}歷史收盤股價{% endblock %}
-
+    {% block head %} <h1>歷史收盤股價</h1>{%endblock%}
     {% block main-content %}
         以下是網站儲存的收盤價資訊：<br>
         {% for stk in mystock %}
@@ -9,4 +9,4 @@
         {% endfor %}
         <hr>
         現在時刻：{{ now }}
-        {% endblock %}
+    {% endblock %}
