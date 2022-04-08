@@ -13,7 +13,7 @@ def index(request):
     
     #stock = twstock.Stock('2330')
     #prices = stock.price
-    # dates = stock.date
+    #dates = stock.date
     #highs = stock.high 
     return render(request, "index.html", locals())
 
@@ -32,6 +32,8 @@ def post(request, cat=""):
     else:
         mystock = Stock.objects.filter(cat=cat)
     return render(request, "post.html", locals())
+
+
 
 def showdate(request):
 
