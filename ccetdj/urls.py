@@ -11,4 +11,5 @@ urlpatterns = [
     path('post/<str:cat>/', views.post),
     path('', views.index),
     path('date/', views.showdate),
+    path('post/<int:group>/', views.post),
 ]

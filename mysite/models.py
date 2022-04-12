@@ -12,6 +12,7 @@ class Stock(models.Model):
     price = models.FloatField(default=0.0)  #收盤價
     date = models.DateField()               #日期
     high = models.FloatField(default=0.0)   #最高價
+    group = models.CharField(max_length=4)    #股票所屬的族群
     
     
 

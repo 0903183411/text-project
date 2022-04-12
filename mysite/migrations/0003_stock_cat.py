@@ -15,4 +15,5 @@ class Migration(migrations.Migration):
             name='cat',
             field=models.CharField(default='10', max_length=4),
         ),
+       
     ]
