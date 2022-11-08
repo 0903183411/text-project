@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-{% block title %} Welcome {% endblock %}
-{% block headmessage %} Welcome to my website! {% endblock %}
+{% block title %} Lotto {% endblock %}
+{% block head %} Welcome to my website! {% endblock %}
 {% block maincontent %}
 <h3>Hello {{ name }} </h3>
 <hr>
@@ -12,7 +12,7 @@ const ctx = document.getElementById('myChart').getContext('2d');
 const myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        tabels: [
+        labels: [
         {% for n in lotto %}
                 {{ n }},
         {% endfor %}
@@ -42,7 +42,7 @@ const myChart = new Chart(ctx, {
             ],
             borderWidth: 1
         }]
-    }
+    },
     options: {
         scales: {
             y: {
