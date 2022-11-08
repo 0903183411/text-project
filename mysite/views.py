@@ -1,47 +1,23 @@
-from cgitb import html
-from datetime import datetime
+from re import L
 from django.shortcuts import render
-from django.http import HttpResponse
-import datetime, twstock
-from mysite.models import Stock
+import random
+from mysite.models import Post
 
+def dbtest(request):
+    posts = Post.objects.all()
+    return render(request, "dbtest.html", locals())
 
+def lotto(request):
+    name = "Jasmine"
+    numbers = list(range(1, 50))
+    random.shuffle(numbers)
+    lotto = sorted(numbers[:6])
+    return render(request, "lotto.html", locals())
 
 def index(request):
-    
-    now = datetime.datetime.now()
-    
-    #stock = twstock.Stock('2330')
-    #prices = stock.price
-    #dates = stock.date
-    #highs = stock.high 
+    name = "Jasmine"
     return render(request, "index.html", locals())
 
-def base(request):
-    posts = Post.objects.all()
-    return render(request, 'base.html', locals())
-
+def parttime(request):
     
-def prices(request):
-    mystock = Stock.objects.all()
-    return render(request, "prices.html", locals())
-
-def post(request, cat="",group=""):
-    if cat=="":
-        mystock = Stock.objects.all()
-    else:
-        mystock = Stock.objects.filter(cat=cat)
-   
-    if group=="":
-        mystock = Stock.objects.all()
-    else:
-        mystock = Stock.objects.filter(group=group)
-    return render(request, "post.html", locals())
-
-
-
-
-def showdate(request):
-
-    now = datetime.datetime.now()
-    return HttpResponse("現在時刻:" + str(now))
+    return render(request, "parttime.html", locals())

@@ -1,7 +1,4 @@
 from django.contrib import admin
-from mysite.models import Stock
+from mysite.models import Post
 
-@admin.register(Stock)
-class StockAdmin(admin.ModelAdmin):
-    list_display = ('name', 'sid', 'cat','group','price', 'date', 'high')
-    ordering = ('-sid', )
+admin.site.register(Post)
